@@ -14,10 +14,11 @@ public class CardSelector : MonoBehaviour
 
     public float hoverHeight = 1.0f;
     public float zSpacing = 0.8f;
-    public float minDistance = 3f; // Минимальное расстояние между картами
+    public float minDistance = 3f;
 
     private Vector3 originalPosition;
     private Transform currentZone = null;
+    private bool isInPlayZone = false; // Флаг, что карта уже сыграна
 
     void Start()
     {
@@ -26,6 +27,13 @@ public class CardSelector : MonoBehaviour
 
     void OnMouseDown()
     {
+        // Если карта уже выложена на поле, её нельзя брать обратно
+        if (isInPlayZone)
+        {
+            Debug.Log("Карту нельзя взять обратно!");
+            return;
+        }
+
         if (selectedCard == this.gameObject)
         {
             selectedCard = null;
@@ -54,10 +62,11 @@ public class CardSelector : MonoBehaviour
 
     public void TryPlaceCard(Transform zone)
     {
-        if (zone == null) return; // Проверка на null
+        if (zone == null) return;
 
         string zoneTag = zone.tag;
 
+        // Если зона существует в лимитах (допустимая зона для карт)
         if (zoneLimits.ContainsKey(zoneTag))
         {
             if (!playZones.ContainsKey(zone))
@@ -67,8 +76,17 @@ public class CardSelector : MonoBehaviour
 
             List<GameObject> cardsInZone = playZones[zone];
 
+            // Проверяем, можно ли добавить карту в зону
             if (cardsInZone.Count < zoneLimits[zoneTag])
             {
+                // Если карта уже была в зоне, нельзя её перемещать
+                if (isInPlayZone)
+                {
+                    Debug.Log("Карту нельзя перемещать между зонами!");
+                    return;
+                }
+
+                // Если карта была в другой зоне, удаляем из старой зоны
                 if (currentZone != null && playZones.ContainsKey(currentZone))
                 {
                     playZones[currentZone].Remove(gameObject);
@@ -76,6 +94,7 @@ public class CardSelector : MonoBehaviour
 
                 cardsInZone.Add(gameObject);
                 currentZone = zone;
+                isInPlayZone = true; // Устанавливаем флаг, что карта теперь в игре
                 selectedCard = null;
                 ResetColor();
 
@@ -94,7 +113,7 @@ public class CardSelector : MonoBehaviour
 
     void AlignCardsInZone(Transform zone, List<GameObject> cards)
     {
-        if (zone == null || cards == null) return; // Проверка на null
+        if (zone == null || cards == null) return;
 
         float centerX = zone.position.x;
         float centerZ = zone.position.z;
