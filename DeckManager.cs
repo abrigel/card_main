@@ -2,40 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class DeckManager : MonoBehaviour
 {
-    public List<GameObject> deck = new List<GameObject>(); // Колода карт
-    public List<GameObject> hand = new List<GameObject>(); // Карты в руке
-    public Transform handPosition;  // Где располагаются карты в руке
-    public int maxHandSize = 5; // Максимальное количество карт в руке
+    public List<GameObject> deck = new List<GameObject>(); // Колода карт (префабы)
+    public Player playerHand; // Ссылка на руку игрока
 
     void Start()
     {
         ShuffleDeck();
     }
 
-    void OnMouseDown() // Клик по колоде
+    void OnMouseDown() // Клик по колоде -> берём карту
     {
         DrawCard();
     }
 
     public void DrawCard()
     {
-        if (deck.Count > 0 && hand.Count < maxHandSize)
+        if (deck.Count > 0 && playerHand.hand.Count < playerHand.maxHandSize)
         {
-            GameObject newCard = deck[0]; // Берем верхнюю карту
-            deck.RemoveAt(0); // Удаляем её из колоды
-            hand.Add(newCard); // Добавляем в руку
-            newCard.transform.position = GetNextHandPosition(); // Перемещаем в руку
-            newCard.SetActive(true); // Показываем карту
+            GameObject newCard = deck[0]; // Взять верхнюю карту
+            deck.RemoveAt(0); // Удалить её из колоды
+            playerHand.AddCardToHand(newCard); // Добавить карту в руку игрока
         }
         else
         {
-            Debug.Log("Невозможно взять карту: либо колода пуста, либо рука заполнена.");
+            Debug.Log("Не могу взять карту: либо колода пуста, либо в руке 5 карт.");
         }
     }
 
-    private void ShuffleDeck()
+    private void ShuffleDeck() // Перемешивание колоды
     {
         for (int i = 0; i < deck.Count; i++)
         {
@@ -44,11 +40,5 @@ public class NewBehaviourScript : MonoBehaviour
             deck[i] = deck[randomIndex];
             deck[randomIndex] = temp;
         }
-    }
-
-    private Vector3 GetNextHandPosition()
-    {
-        float offset = 2.0f; // Смещение между картами
-        return new Vector3(handPosition.position.x + hand.Count * offset, handPosition.position.y, handPosition.position.z);
     }
 }
