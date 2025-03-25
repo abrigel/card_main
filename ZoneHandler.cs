@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class ZoneHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnMouseDown()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (CardSelector.selectedCard != null)
+        {
+            CardSelector.selectedCard.GetComponent<CardSelector>().TryPlaceCard(transform);
+        }
     }
 }
