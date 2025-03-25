@@ -18,7 +18,7 @@ public class CardSelector : MonoBehaviour
 
     private Vector3 originalPosition;
     private Transform currentZone = null;
-    private bool isInPlayZone = false; // Флаг, что карта уже сыграна
+    private bool isInPlayZone = false;
 
     void Start()
     {
@@ -27,7 +27,6 @@ public class CardSelector : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Если карта уже выложена на поле, её нельзя брать обратно
         if (isInPlayZone)
         {
             Debug.Log("Карту нельзя взять обратно!");
@@ -94,7 +93,7 @@ public class CardSelector : MonoBehaviour
 
                 cardsInZone.Add(gameObject);
                 currentZone = zone;
-                isInPlayZone = true; // Устанавливаем флаг, что карта теперь в игре
+                isInPlayZone = true;
                 selectedCard = null;
                 ResetColor();
 
