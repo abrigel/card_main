@@ -8,6 +8,7 @@ public class DragandDrop : MonoBehaviour
     private bool isDragging = true;
     private Camera mainCamera;
     private Vector3 originalPosition;
+    private static Dictionary<Transform, List<GameObject>> playZones = new Dictionary<Transform, List<GameObject>>();
 
     void Start()
     {
@@ -52,11 +53,24 @@ public class DragandDrop : MonoBehaviour
         {
             if (hit.collider.CompareTag("PlayZone"))
             {
-                transform.position = hit.collider.transform.position; // Фиксируем карту в зоне
+                Transform zoneTransform = hit.collider.transform;
+
+                if (!playZones.ContainsKey(zoneTransform))
+                {
+                    playZones[zoneTransform] = new List<GameObject>();
+                }
+
+                List<GameObject> cardsInZone = playZones[zoneTransform];
+                cardsInZone.Add(gameObject);
+
+                Vector3 newPosition = zoneTransform.position + new Vector3(cardsInZone.Count * 1.5f, 0, 0);
+                transform.position = newPosition;
+
+                originalPosition = transform.position;
             }
             else
             {
-                transform.position = originalPosition; // Возвращаем карту в руку
+                transform.position = originalPosition;
             }
         }
         else
