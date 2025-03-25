@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class CardSelector : MonoBehaviour
 {
-    private static GameObject selectedCard = null; // Выбранная карта
+    public static GameObject selectedCard = null;
     private static Dictionary<Transform, List<GameObject>> playZones = new Dictionary<Transform, List<GameObject>>();
     private static Dictionary<string, int> zoneLimits = new Dictionary<string, int>
     {
-        { "DefenseZone", 5 },  // В защитной зоне 5 карт
-        { "AttackZone", 3 }     // В атакующей зоне 3 карты
+        { "DefenseZone", 5 },
+        { "AttackZone", 3 }
     };
 
-    public float hoverHeight = 1.0f; // Высота над зоной
-    public float zSpacing = 0.5f; // Расстояние между картами
+    public float hoverHeight = 1.0f;
+    public float zSpacing = 0.8f;
+    public float minDistance = 3f; // Минимальное расстояние между картами
 
     private Vector3 originalPosition;
     private Transform currentZone = null;
@@ -27,12 +28,12 @@ public class CardSelector : MonoBehaviour
     {
         if (selectedCard == this.gameObject)
         {
-            selectedCard = null; // Отмена выбора
+            selectedCard = null;
             ResetColor();
         }
         else
         {
-            if (selectedCard != null)
+            if (selectedCard != null && selectedCard.GetComponent<CardSelector>() != null)
             {
                 selectedCard.GetComponent<CardSelector>().ResetColor();
             }
@@ -53,6 +54,8 @@ public class CardSelector : MonoBehaviour
 
     public void TryPlaceCard(Transform zone)
     {
+        if (zone == null) return; // Проверка на null
+
         string zoneTag = zone.tag;
 
         if (zoneLimits.ContainsKey(zoneTag))
@@ -66,7 +69,7 @@ public class CardSelector : MonoBehaviour
 
             if (cardsInZone.Count < zoneLimits[zoneTag])
             {
-                if (currentZone != null)
+                if (currentZone != null && playZones.ContainsKey(currentZone))
                 {
                     playZones[currentZone].Remove(gameObject);
                 }
@@ -91,14 +94,19 @@ public class CardSelector : MonoBehaviour
 
     void AlignCardsInZone(Transform zone, List<GameObject> cards)
     {
+        if (zone == null || cards == null) return; // Проверка на null
+
         float centerX = zone.position.x;
         float centerZ = zone.position.z;
         int count = cards.Count;
 
+        float totalSpacing = (count - 1) * Mathf.Max(zSpacing, minDistance);
+        float startZ = centerZ - totalSpacing / 2;
+
         for (int i = 0; i < count; i++)
         {
-            float zOffset = (i - (count - 1) / 2.0f) * zSpacing;
-            Vector3 newPosition = new Vector3(centerX, zone.position.y + hoverHeight, centerZ + zOffset);
+            float zOffset = startZ + i * Mathf.Max(zSpacing, minDistance);
+            Vector3 newPosition = new Vector3(centerX, zone.position.y + hoverHeight, zOffset);
             cards[i].transform.position = newPosition;
         }
     }
