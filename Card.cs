@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int rank; // Ранг карты
+
+    public void AssignRandomRank()
     {
-        
+        rank = Random.Range(2, 10); // Ранг от 2 до 9
+        gameObject.name = "Card " + rank;
+        UpdateCardVisual();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpdateCardVisual()
     {
-        
+        TextMesh text = GetComponentInChildren<TextMesh>(); // Находим текст на карте
+        if (text != null)
+        {
+            text.text = rank.ToString(); // Отображаем ранг
+        }
     }
 }
