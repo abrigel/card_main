@@ -11,6 +11,9 @@ public class DeckManager : MonoBehaviour
 
     private int totalCards = 20; // Количество карт в колоде
 
+    // Отступ между картами по оси Z
+    private float cardOffset = 2.0f;
+
     void OnMouseDown() // Клик по колоде
     {
         DrawCards();
@@ -32,9 +35,9 @@ public class DeckManager : MonoBehaviour
             hand.Add(newCard);
             totalCards--; // Уменьшаем колоду
 
-            // Размещаем карту с отступом
-            float offset = 2.0f;
-            newCard.transform.position = new Vector3(handZone.position.x + (hand.Count - 1) * offset, handZone.position.y, handZone.position.z);
+            // Располагаем карты вдоль оси Z с заданным отступом
+            Vector3 targetPosition = new Vector3(0, 0, i * cardOffset); // Отступаем по оси Z
+            newCard.transform.localPosition = targetPosition;
         }
     }
 }

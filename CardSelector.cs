@@ -8,8 +8,8 @@ public class CardSelector : MonoBehaviour
     private static Dictionary<Transform, List<GameObject>> playZones = new Dictionary<Transform, List<GameObject>>();
     private static Dictionary<string, int> zoneLimits = new Dictionary<string, int>
     {
-        { "DefenseZone", 5 },
-        { "AttackZone", 3 }
+        { "DefenseZone", 3 },
+        { "AttackZone", 5 }
     };
 
     public float hoverHeight = 1.0f;
