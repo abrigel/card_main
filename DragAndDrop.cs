@@ -22,7 +22,7 @@ public class DragandDrop : MonoBehaviour
 
     }
 
-    void OnMousedrag()
+    void OnMouseDrag()
     {
         if (isDragging)
         {
