@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DragandDrop : MonoBehaviour
 {
+    private Vector3 offset;
+    private bool isDragging = true;
+    private Camera mainCamera;
+    private Vector3 originalPosition;
+
     // Start is called before the first frame update
     void Start()
     {
