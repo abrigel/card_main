@@ -25,8 +25,6 @@
 - **UIManager.cs** – обработка интерфейса пользователя.
 
 ## Видеодемонстрация
-Ссылка на демонстрацию работы игры: [Видео](/Users/dudedude/Desktop/GameCard.mp4)
+Ссылка на демонстрацию работы игры: [Видео](https://drive.google.com/drive/folders/1b2fhO02u1cf6lPFzBMvorJcRvNaVhovj?usp=sharing)
 
-## Лицензия
-Проект распространяется под лицензией MIT.
 
