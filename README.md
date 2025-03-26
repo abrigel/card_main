@@ -25,6 +25,6 @@
 - **ZoneHandler.cs** - позволяет размещать выбранную карту в зону при клике, вызывая соответствующий метод у CardSelector.
 
 ## Видеодемонстрация
-Ссылка на демонстрацию работы игры: [Видео](https://drive.google.com/drive/folders/1b2fhO02u1cf6lPFzBMvorJcRvNaVhovj?usp=sharing)
+Ссылка на демонстрацию работы игры: [Видео]([https://drive.google.com/drive/folders/1b2fhO02u1cf6lPFzBMvorJcRvNaVhovj?usp=sharing](https://drive.google.com/drive/folders/1b2fhO02u1cf6lPFzBMvorJcRvNaVhovj))
 
 
