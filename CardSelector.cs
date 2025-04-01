@@ -2,18 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Управляет выбором и размещением карт в игровых зонах.
+/// </summary>
 public class CardSelector : MonoBehaviour
 {
+    /// <summary>
+    /// Выбранная карта.
+    /// </summary>
     public static GameObject selectedCard = null;
+
+    /// <summary>
+    /// Словарь, хранящий игровые зоны и карты в них.
+    /// </summary>
     private static Dictionary<Transform, List<GameObject>> playZones = new Dictionary<Transform, List<GameObject>>();
+
+    /// <summary>
+    /// Ограничения по количеству карт в каждой зоне.
+    /// </summary>
     private static Dictionary<string, int> zoneLimits = new Dictionary<string, int>
     {
         { "DefenseZone", 3 },
         { "AttackZone", 5 }
     };
 
+    /// <summary>
+    /// Высота, на которую поднимается карта при выделении.
+    /// </summary>
     public float hoverHeight = 1.0f;
+
+    /// <summary>
+    /// Расстояние между картами в зоне по оси Z.
+    /// </summary>
     public float zSpacing = 0.8f;
+
+    /// <summary>
+    /// Минимальное расстояние между картами.
+    /// </summary>
     public float minDistance = 3f;
 
     private Vector3 originalPosition;
@@ -49,23 +74,32 @@ public class CardSelector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Сбрасывает цвет карты на стандартный.
+    /// </summary>
     void ResetColor()
     {
         GetComponent<Renderer>().material.color = Color.white;
     }
 
+    /// <summary>
+    /// Выделяет карту, изменяя её цвет.
+    /// </summary>
     void HighlightCard()
     {
         GetComponent<Renderer>().material.color = Color.yellow;
     }
 
+    /// <summary>
+    /// Пытается разместить карту в указанной игровой зоне.
+    /// </summary>
+    /// <param name="zone">Игровая зона для размещения карты.</param>
     public void TryPlaceCard(Transform zone)
     {
         if (zone == null) return;
 
         string zoneTag = zone.tag;
 
-        // Если зона существует в лимитах (допустимая зона для карт)
         if (zoneLimits.ContainsKey(zoneTag))
         {
             if (!playZones.ContainsKey(zone))
@@ -75,17 +109,14 @@ public class CardSelector : MonoBehaviour
 
             List<GameObject> cardsInZone = playZones[zone];
 
-            // Проверяем, можно ли добавить карту в зону
             if (cardsInZone.Count < zoneLimits[zoneTag])
             {
-                // Если карта уже была в зоне, нельзя её перемещать
                 if (isInPlayZone)
                 {
                     Debug.Log("Карту нельзя перемещать между зонами!");
                     return;
                 }
 
-                // Если карта была в другой зоне, удаляем из старой зоны
                 if (currentZone != null && playZones.ContainsKey(currentZone))
                 {
                     playZones[currentZone].Remove(gameObject);
@@ -110,6 +141,11 @@ public class CardSelector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Выравнивает карты в игровой зоне.
+    /// </summary>
+    /// <param name="zone">Игровая зона.</param>
+    /// <param name="cards">Список карт в зоне.</param>
     void AlignCardsInZone(Transform zone, List<GameObject> cards)
     {
         if (zone == null || cards == null) return;
@@ -129,6 +165,9 @@ public class CardSelector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Возвращает карту в руку при невозможности её размещения.
+    /// </summary>
     IEnumerator ReturnToHand()
     {
         float time = 0;
