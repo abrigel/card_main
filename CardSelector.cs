@@ -98,9 +98,25 @@ public class CardSelector : MonoBehaviour
     {
         if (zone == null) return;
 
-        string zoneTag = zone.tag;
+        // Получаем компонент Card, чтобы узнать стоимость маны
+        Card cardComponent = GetComponent<Card>();
+        if (cardComponent == null)
+        {
+            Debug.LogError("Компонент Card не найден!");
+            return;
+        }
 
-        if (zoneLimits.ContainsKey(zoneTag))
+        // Проверка маны
+        if (!TurnManager.instance.HasEnoughMana(cardComponent.manaCost))
+        {
+            Debug.Log("Недостаточно маны для этой карты!");
+            StartCoroutine(ReturnToHand());
+            return;
+        }
+
+        // Если зона существует в лимитах (допустимая зона для карт)
+        string zoneTag = zone.tag;
+        if (TurnManager.instance != null && zoneLimits.ContainsKey(zoneTag))
         {
             if (!playZones.ContainsKey(zone))
             {
@@ -109,14 +125,17 @@ public class CardSelector : MonoBehaviour
 
             List<GameObject> cardsInZone = playZones[zone];
 
+            // Проверяем, можно ли добавить карту в зону
             if (cardsInZone.Count < zoneLimits[zoneTag])
             {
+                // Если карта уже была в зоне, нельзя её перемещать
                 if (isInPlayZone)
                 {
                     Debug.Log("Карту нельзя перемещать между зонами!");
                     return;
                 }
 
+                // Если карта была в другой зоне, удаляем из старой зоны
                 if (currentZone != null && playZones.ContainsKey(currentZone))
                 {
                     playZones[currentZone].Remove(gameObject);
@@ -127,6 +146,9 @@ public class CardSelector : MonoBehaviour
                 isInPlayZone = true;
                 selectedCard = null;
                 ResetColor();
+
+                // Списываем ману
+                TurnManager.instance.SpendMana(cardComponent.manaCost);
 
                 AlignCardsInZone(zone, cardsInZone);
             }
@@ -140,6 +162,7 @@ public class CardSelector : MonoBehaviour
             StartCoroutine(ReturnToHand());
         }
     }
+
 
     /// <summary>
     /// Выравнивает карты в игровой зоне.
