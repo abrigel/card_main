@@ -19,6 +19,8 @@ public class TurnManager : MonoBehaviour
     public float roundDelay = 1f; // Задержка между сменой раундов
 
     public Button endTurnButton; // Кнопка для завершения хода
+    public Text manaText;
+
 
     void Awake()
     {
@@ -38,6 +40,16 @@ public class TurnManager : MonoBehaviour
         StartNewRound();
     }
 
+    // Обновление текста с текущей маной
+    private void UpdateManaUI()
+    {
+        if (manaText != null)
+        {
+            int currentMana = (currentTurn == PlayerTurn.Player1) ? player1CurrentMana : player2CurrentMana;
+            manaText.text = "Мана: " + currentMana;
+        }
+    }
+
     // Начало нового раунда для текущего игрока
     public void StartNewRound()
     {
@@ -53,6 +65,7 @@ public class TurnManager : MonoBehaviour
             player2CurrentMana = player2MaxMana;
             Debug.Log("Раунд игрока 2: Мана увеличена до " + player2CurrentMana);
         }
+        UpdateManaUI();
     }
 
     // Проверка, хватает ли текущей маны для совершения действия
@@ -76,6 +89,7 @@ public class TurnManager : MonoBehaviour
             player2CurrentMana -= amount;
             Debug.Log("Игрок 2 потратил " + amount + " маны. Осталось " + player2CurrentMana);
         }
+        UpdateManaUI();
     }
 
     // Завершение хода: переключение игрока и запуск нового раунда
@@ -87,6 +101,7 @@ public class TurnManager : MonoBehaviour
         currentTurn = (currentTurn == PlayerTurn.Player1) ? PlayerTurn.Player2 : PlayerTurn.Player1;
         // Запуск нового раунда с заданной задержкой
         Invoke(nameof(StartNewRound), roundDelay);
+        UpdateManaUI();
     }
 }
 
