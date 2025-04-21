@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{0EEBF18E-272D-828E-0FE3-FE5D1E52DE1C}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ZoneHandler.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ZoneHandler.cs" Line="12" Column="19" />
+      <File FileName="Assets/Scripts/CardSelector.cs" Line="99" Column="34" />
+      <File FileName="Assets/Scripts/Card.cs" Line="16" Column="21" />
+      <File FileName="Assets/Scripts/Player.cs" Line="53" Column="32" />
+      <File FileName="Assets/Scripts/DeckManager.cs" Line="13" Column="34" />
+      <File FileName="Assets/Scripts/TurnManager.cs" Line="92" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CardGame" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="ZoneHandler.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2de25f0d-2855-4278-a09e-340057a8e8b5" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
