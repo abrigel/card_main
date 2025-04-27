@@ -1,20 +1,15 @@
 ﻿<Properties StartupConfiguration="{0EEBF18E-272D-828E-0FE3-FE5D1E52DE1C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DraggableCard.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AttackController.cs">
     <Files>
-      <File FileName="Assets/Scripts/CardData.cs" Line="25" Column="37" />
-      <File FileName="Assets/Scripts/CardClickHandler.cs" Line="4" Column="2" />
-      <File FileName="Assets/Scripts/DeckManager.cs" Line="3" Column="1" />
+      <File FileName="Assets/Scripts/CardData.cs" Line="8" Column="26" />
+      <File FileName="Assets/Scripts/DeckManager.cs" Line="7" Column="31" />
       <File FileName="Assets/Scripts/ZoneHandler.cs" Line="3" Column="41" />
-      <File FileName="Assets/Scripts/AttackController.cs" Line="97" Column="1" />
-      <File FileName="Assets/Scripts/CardSelector.cs" Line="25" Column="1" />
-      <File FileName="Assets/Scripts/GameState.cs" Line="6" Column="2" />
-      <File FileName="Assets/Scripts/CardDragDrop.cs" Line="65" Column="1" />
-      <File FileName="Assets/Scripts/CardHighlighter.cs" Line="12" Column="51" />
-      <File FileName="Assets/Scripts/BattleManager.cs" Line="10" Column="6" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="66" Column="6" />
+      <File FileName="Assets/Scripts/AttackController.cs" Line="29" Column="25" />
+      <File FileName="Assets/Scripts/CardDragDrop.cs" Line="52" Column="1" />
+      <File FileName="Assets/Scripts/EnemyController.cs" Line="19" Column="1" />
       <File FileName="Assets/Scripts/GameManager.cs" Line="23" Column="27" />
       <File FileName="Assets/Scripts/PlayerController.cs" Line="3" Column="19" />
-      <File FileName="Assets/Scripts/DraggableCard.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/DraggableCard.cs" Line="13" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +17,7 @@
           <Node name="CardGame" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="DraggableCard.cs" selected="True" />
+                <Node name="AttackController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
