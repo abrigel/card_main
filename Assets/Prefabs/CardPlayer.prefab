@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3292000517971710963}
   - component: {fileID: 8542213722150749267}
   - component: {fileID: 4210052451231492561}
+  - component: {fileID: 3373486003574646183}
   m_Layer: 0
   m_Name: CardPlayer
   m_TagString: Untagged
@@ -127,6 +128,7 @@ MonoBehaviour:
   health: 0
   isPlaced: 0
   hasAttackedThisTurn: 0
+  isPlayerCard: 1
 --- !u!114 &549158985191688208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d7c6da978734b23a194f86fb4e7223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 6257429688582517379}
 --- !u!54 &3292000517971710963
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -189,5 +190,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f9311e9274004b7a95cd58d11a62a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3373486003574646183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2408975786096362530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9b450f3ebe941008bfe72f620930a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

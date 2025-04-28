@@ -316,8 +316,8 @@ GameObject:
   - component: {fileID: 325837707}
   - component: {fileID: 325837710}
   - component: {fileID: 325837709}
-  - component: {fileID: 325837708}
   - component: {fileID: 325837711}
+  - component: {fileID: 325837712}
   m_Layer: 0
   m_Name: AttachZone
   m_TagString: AttackZone
@@ -340,27 +340,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1177779477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &325837708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325837706}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &325837709
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -425,6 +404,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoneType: 0
   cardSpacing: 1.5
+  layoutAxis: 1
+--- !u!65 &325837712
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325837706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &360134111
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,8 +723,8 @@ GameObject:
   - component: {fileID: 482108772}
   - component: {fileID: 482108775}
   - component: {fileID: 482108774}
-  - component: {fileID: 482108773}
   - component: {fileID: 482108776}
+  - component: {fileID: 482108777}
   m_Layer: 0
   m_Name: DefenseZone
   m_TagString: DefenseZone
@@ -746,27 +747,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1177779477}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &482108773
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482108771}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &482108774
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -830,7 +810,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneType: 1
-  cardSpacing: 1.5
+  cardSpacing: 2
+  layoutAxis: 1
+--- !u!65 &482108777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482108771}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &494430188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1042,6 @@ GameObject:
   - component: {fileID: 648287238}
   - component: {fileID: 648287241}
   - component: {fileID: 648287240}
-  - component: {fileID: 648287239}
   m_Layer: 0
   m_Name: DefenseZone
   m_TagString: DefenseZone
@@ -1057,33 +1058,12 @@ Transform:
   m_GameObject: {fileID: 648287237}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 9.61, y: 0.07, z: 0.0638}
-  m_LocalScale: {x: 2.0728924, y: 1, z: 9.808498}
+  m_LocalPosition: {x: 9.61, y: 0.07, z: -2.29}
+  m_LocalScale: {x: 2, y: 1, z: 16.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1225118129}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!65 &648287239
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648287237}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &648287240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1498,7 +1478,6 @@ GameObject:
   - component: {fileID: 1498213072}
   - component: {fileID: 1498213075}
   - component: {fileID: 1498213074}
-  - component: {fileID: 1498213073}
   m_Layer: 0
   m_Name: AttachZone
   m_TagString: AttackZone
@@ -1521,27 +1500,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1225118129}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!65 &1498213073
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498213071}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1498213074
 MeshRenderer:
   m_ObjectHideFlags: 0
