@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7257fccd28804808a385a2bee107947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner: 1
   manaCost: 0
   attack: 0
   health: 0

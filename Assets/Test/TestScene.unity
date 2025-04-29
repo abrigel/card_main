@@ -334,7 +334,7 @@ Transform:
   m_GameObject: {fileID: 325837706}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.35, y: 0.2, z: -2.73}
+  m_LocalPosition: {x: 0, y: 0.2, z: -3}
   m_LocalScale: {x: 2, y: 0.1, z: 16.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -403,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spacing: 0.15
+  cardsInZone: []
 --- !u!65 &325837712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -631,6 +632,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5687537, y: 1.2553785, z: 1}
   m_Center: {x: 2.4625785, y: 0.63844633, z: 0}
+--- !u!114 &386873382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386873379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73bb3a604fea145d596eb00cf6fa9077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 2408975786096362530, guid: 4f8662477bc1442278a2642be26c46d8,
+    type: 3}
+  handZone: {fileID: 383110221}
+  maxHandSize: 5
+  cardSpacing: 0.15
 --- !u!1 &386895306
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +757,7 @@ Transform:
   m_GameObject: {fileID: 482108771}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: 0.07, z: -2.36}
+  m_LocalPosition: {x: -4, y: 0.07, z: -2.5}
   m_LocalScale: {x: 2, y: 0.1, z: 16.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -808,6 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spacing: 0.15
+  cardsInZone: []
 --- !u!65 &482108777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1129,6 +1148,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 386873380}
+    - targetCorrespondingSourceObject: {fileID: 1187614998434276798, guid: 6db943089df34466f893a400ca277e89,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 386873382}
   m_SourcePrefab: {fileID: 100100000, guid: 6db943089df34466f893a400ca277e89, type: 3}
 --- !u!1 &949506636
 GameObject:
@@ -1394,7 +1417,6 @@ MonoBehaviour:
   player: {fileID: 1177779476}
   enemy: {fileID: 1225118128}
   endTurnButton: {fileID: 1933709313}
-  currentState: 0
 --- !u!4 &1454521468
 Transform:
   m_ObjectHideFlags: 0
