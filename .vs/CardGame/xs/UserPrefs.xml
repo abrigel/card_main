@@ -1,18 +1,17 @@
 ﻿<Properties StartupConfiguration="{0EEBF18E-272D-828E-0FE3-FE5D1E52DE1C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CardClickHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CardData.cs">
     <Files>
-      <File FileName="Assets/Scripts/AttackController.cs" Line="72" Column="1" />
-      <File FileName="Assets/Scripts/CardData.cs" Line="10" Column="34" />
-      <File FileName="Assets/Scripts/DeckManager.cs" Line="4" Column="41" />
-      <File FileName="Assets/Scripts/ZoneHandler.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/CardDragDrop.cs" Line="23" Column="44" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="27" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="50" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="53" Column="78" />
-      <File FileName="Assets/Scripts/DraggableCard.cs" Line="6" Column="74" />
-      <File FileName="Assets/Scripts/CardSelector.cs" Line="21" Column="1" />
+      <File FileName="Assets/Scripts/AttackController.cs" Line="30" Column="56" />
+      <File FileName="Assets/Scripts/CardData.cs" Line="20" Column="45" />
+      <File FileName="Assets/Scripts/DeckManager.cs" Line="27" Column="10" />
+      <File FileName="Assets/Scripts/ZoneHandler.cs" Line="33" Column="54" />
+      <File FileName="Assets/Scripts/CardDragDrop.cs" Line="24" Column="51" />
+      <File FileName="Assets/Scripts/EnemyController.cs" Line="70" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="16" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="78" Column="56" />
+      <File FileName="Assets/Scripts/DraggableCard.cs" Line="38" Column="65" />
       <File FileName="Assets/Scripts/GameState.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/CardClickHandler.cs" Line="38" Column="1" />
+      <File FileName="Assets/Scripts/CardClickHandler.cs" Line="24" Column="53" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +19,7 @@
           <Node name="CardGame" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="CardClickHandler.cs" selected="True" />
+                <Node name="CardData.cs" selected="True" />
               </Node>
             </Node>
           </Node>
