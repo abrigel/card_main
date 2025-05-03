@@ -1,26 +1,23 @@
 ﻿<Properties StartupConfiguration="{0EEBF18E-272D-828E-0FE3-FE5D1E52DE1C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CardData.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CardDragDrop.cs">
     <Files>
-      <File FileName="Assets/Scripts/AttackController.cs" Line="30" Column="56" />
-      <File FileName="Assets/Scripts/CardData.cs" Line="20" Column="45" />
-      <File FileName="Assets/Scripts/DeckManager.cs" Line="27" Column="10" />
-      <File FileName="Assets/Scripts/ZoneHandler.cs" Line="33" Column="54" />
-      <File FileName="Assets/Scripts/CardDragDrop.cs" Line="24" Column="51" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="70" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="16" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="78" Column="56" />
-      <File FileName="Assets/Scripts/DraggableCard.cs" Line="38" Column="65" />
+      <File FileName="Assets/Scripts/AttackController.cs" Line="18" Column="6" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="8" Column="29" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="24" Column="6" />
+      <File FileName="Assets/Scripts/EnemyController.cs" Line="17" Column="33" />
+      <File FileName="Assets/Scripts/CardDragDrop.cs" Line="98" Column="1" />
+      <File FileName="Assets/Scripts/DeckManager.cs" Line="63" Column="60" />
+      <File FileName="Assets/Scripts/CardData.cs" Line="10" Column="23" />
       <File FileName="Assets/Scripts/GameState.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/CardClickHandler.cs" Line="24" Column="53" />
+      <File FileName="Assets/Scripts/ZoneHandler.cs" Line="5" Column="2" />
+      <File FileName="Assets/Scripts/DraggableCard.cs" Line="36" Column="60" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CardGame" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="CardData.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
