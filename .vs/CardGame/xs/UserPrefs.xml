@@ -1,22 +1,23 @@
 ﻿<Properties StartupConfiguration="{0EEBF18E-272D-828E-0FE3-FE5D1E52DE1C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CardDragDrop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CardClickHandler.cs">
     <Files>
       <File FileName="Assets/Scripts/AttackController.cs" Line="18" Column="6" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="8" Column="29" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="24" Column="6" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="17" Column="33" />
+      <File FileName="Assets/Scripts/GameManager.cs" />
+      <File FileName="Assets/Scripts/PlayerController.cs" />
+      <File FileName="Assets/Scripts/EnemyController.cs" />
       <File FileName="Assets/Scripts/CardDragDrop.cs" Line="98" Column="1" />
-      <File FileName="Assets/Scripts/DeckManager.cs" Line="63" Column="60" />
-      <File FileName="Assets/Scripts/CardData.cs" Line="10" Column="23" />
-      <File FileName="Assets/Scripts/GameState.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/ZoneHandler.cs" Line="5" Column="2" />
-      <File FileName="Assets/Scripts/DraggableCard.cs" Line="36" Column="60" />
+      <File FileName="Assets/Scripts/DeckManager.cs" />
+      <File FileName="Assets/Scripts/CardData.cs" />
+      <File FileName="Assets/Scripts/GameState.cs" />
+      <File FileName="Assets/Scripts/ZoneHandler.cs" />
+      <File FileName="Assets/Scripts/DraggableCard.cs" />
+      <File FileName="Assets/Scripts/CardClickHandler.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CardGame" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
@@ -26,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="035b683e-10cf-4893-94a3-e214a37d5f5b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2b2baf50-8039-4a55-9f0d-2f443dd46456" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
