@@ -66,10 +66,12 @@
     <Compile Include="Assets/Scripts/AttackController.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/GameManager.cs" />
+    <Compile Include="Assets/Scripts/CardClickHandler.cs" />
     <Compile Include="Assets/Scripts/PlayerController.cs" />
     <Compile Include="Assets/Scripts/DraggableCard.cs" />
     <Compile Include="Assets/Scripts/GameState.cs" />
     <Compile Include="Assets/Scripts/CardData.cs" />
+    <Compile Include="Assets/Scripts/CardDragDrop.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
